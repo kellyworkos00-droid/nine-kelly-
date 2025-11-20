@@ -89,7 +89,7 @@ export default function App() {
               <Box sx={{ p: 4 }}>
                 <Typography variant="h4" gutterBottom>CRM</Typography>
                 <Grid container spacing={2}>
-                  <Grid item xs={12} md={6} item>
+                  <Grid item xs={12} md={6}>
                     <Paper sx={{ p: 2 }}>
                       <Typography variant="h6">Add Customer</Typography>
                       <TextField label="Customer Name" fullWidth sx={{ my: 1 }} />
@@ -97,7 +97,7 @@ export default function App() {
                       <Button variant="contained" color="primary">Add Customer</Button>
                     </Paper>
                   </Grid>
-                  <Grid item xs={12} md={6} item>
+                  <Grid item xs={12} md={6}>
                     <Paper sx={{ p: 2 }}>
                       <Typography variant="h6">Log Interaction</Typography>
                       <TextField label="Customer" fullWidth sx={{ my: 1 }} />
@@ -108,7 +108,36 @@ export default function App() {
                 </Grid>
               </Box>
             )}
-            {module === 'Sales' && <Box sx={{ p: 4 }}><h2>Sales</h2><p>Sales module placeholder.</p></Box>}
+            {module === 'Sales' && (
+              <Box sx={{ p: 4 }}>
+                <Typography variant="h4" gutterBottom>Sales</Typography>
+                <Grid container spacing={2}>
+                  <Grid item xs={12} md={6} item>
+                    <Paper sx={{ p: 2 }}>
+                      <Typography variant="h6">Create Order</Typography>
+                      <TextField label="Customer Name" fullWidth sx={{ my: 1 }} />
+                      <TextField label="Product" fullWidth sx={{ my: 1 }} />
+                      <TextField label="Quantity" type="number" fullWidth sx={{ my: 1 }} />
+                      <Button variant="contained" color="primary">Create Order</Button>
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} md={6} item>
+                    <Paper sx={{ p: 2 }}>
+                      <Typography variant="h6">Issue Receipt</Typography>
+                      <TextField label="Order ID" fullWidth sx={{ my: 1 }} />
+                      <TextField label="Amount (KES)" type="number" fullWidth sx={{ my: 1 }} />
+                      <Button variant="contained" color="secondary">Issue Receipt</Button>
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} md={12}>
+                    <Paper sx={{ p: 2, mt: 2 }}>
+                      <Typography variant="h6">Sales Report</Typography>
+                      <Button variant="contained" color="success">Generate Report</Button>
+                    </Paper>
+                  </Grid>
+                </Grid>
+              </Box>
+            )}
             {module === 'Purchasing' && <Box sx={{ p: 4 }}><h2>Purchasing</h2><p>Purchasing module placeholder.</p></Box>}
             {module === 'Analytics' && <Box sx={{ p: 4 }}><h2>Analytics</h2><p>Analytics module placeholder.</p></Box>}
             {module === 'Support' && <Box sx={{ p: 4 }}><h2>Support</h2><p>Support module placeholder.</p></Box>}
