@@ -3,7 +3,9 @@ import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import Box from '@mui/material/Box';
 
+
 import DashboardCards from './components/DashboardCards';
+import DashboardChart from './components/DashboardChart';
 
 export default function App() {
   return (
@@ -12,6 +14,7 @@ export default function App() {
       <Box sx={{ flexGrow: 1 }}>
         <Navbar />
         <DashboardCards />
+        <DashboardChart />
         {/* Main dashboard content will go here */}
       </Box>
     </Box>
