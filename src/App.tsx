@@ -4,8 +4,10 @@ import Navbar from './components/Navbar';
 import Box from '@mui/material/Box';
 
 
+
 import DashboardCards from './components/DashboardCards';
 import DashboardChart from './components/DashboardChart';
+import DashboardTable from './components/DashboardTable';
 
 export default function App() {
   return (
@@ -15,6 +17,7 @@ export default function App() {
         <Navbar />
         <DashboardCards />
         <DashboardChart />
+        <DashboardTable />
         {/* Main dashboard content will go here */}
       </Box>
     </Box>
