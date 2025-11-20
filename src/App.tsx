@@ -1,3 +1,8 @@
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
 import LandingPage from './components/LandingPage';
 import Sidebar from './components/Sidebar';
@@ -80,7 +85,29 @@ export default function App() {
             {module === 'Manufacturing' && <Manufacturing />}
             {module === 'HR Management' && <HRManagement />}
             {/* Add stubs for CRM, Sales, Purchasing, Analytics, Support as needed */}
-            {module === 'CRM' && <Box sx={{ p: 4 }}><h2>CRM</h2><p>Customer Relationship Management module placeholder.</p></Box>}
+            {module === 'CRM' && (
+              <Box sx={{ p: 4 }}>
+                <Typography variant="h4" gutterBottom>CRM</Typography>
+                <Grid container spacing={2}>
+                  <Grid item xs={12} md={6} item>
+                    <Paper sx={{ p: 2 }}>
+                      <Typography variant="h6">Add Customer</Typography>
+                      <TextField label="Customer Name" fullWidth sx={{ my: 1 }} />
+                      <TextField label="Contact Info" fullWidth sx={{ my: 1 }} />
+                      <Button variant="contained" color="primary">Add Customer</Button>
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} md={6} item>
+                    <Paper sx={{ p: 2 }}>
+                      <Typography variant="h6">Log Interaction</Typography>
+                      <TextField label="Customer" fullWidth sx={{ my: 1 }} />
+                      <TextField label="Notes" fullWidth sx={{ my: 1 }} />
+                      <Button variant="contained" color="secondary">Log Interaction</Button>
+                    </Paper>
+                  </Grid>
+                </Grid>
+              </Box>
+            )}
             {module === 'Sales' && <Box sx={{ p: 4 }}><h2>Sales</h2><p>Sales module placeholder.</p></Box>}
             {module === 'Purchasing' && <Box sx={{ p: 4 }}><h2>Purchasing</h2><p>Purchasing module placeholder.</p></Box>}
             {module === 'Analytics' && <Box sx={{ p: 4 }}><h2>Analytics</h2><p>Analytics module placeholder.</p></Box>}
