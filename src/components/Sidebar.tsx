@@ -11,6 +11,10 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 const menuItems = [
   { text: 'Dashboard', icon: <DashboardIcon /> },
+  { text: 'Accounting', icon: <BarChartIcon /> },
+  { text: 'Inventory', icon: <WorkIcon /> },
+  { text: 'Manufacturing', icon: <SettingsIcon /> },
+  { text: 'HR Management', icon: <PeopleIcon /> },
   { text: 'Users', icon: <PeopleIcon /> },
   { text: 'Reports', icon: <BarChartIcon /> },
   { text: 'Settings', icon: <SettingsIcon /> },
