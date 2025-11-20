@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import LandingPage from './components/LandingPage';
 import Sidebar from './components/Sidebar';
+import Accounting from './components/Accounting';
+import Inventory from './components/Inventory';
+import Manufacturing from './components/Manufacturing';
+import HRManagement from './components/HRManagement';
 import Navbar from './components/Navbar';
 import Box from '@mui/material/Box';
 
@@ -14,6 +18,7 @@ import UserManagement from './components/UserManagement';
 
 export default function App() {
   const [page, setPage] = useState<'landing' | 'login' | 'dashboard'>('landing');
+  const [module, setModule] = useState<string>('Dashboard');
 
   const handleGetStarted = () => setPage('login');
   const handleLoginSuccess = () => setPage('dashboard');
@@ -66,13 +71,20 @@ export default function App() {
       {page === 'login' && <LoginWithButton onLoginSuccess={handleLoginSuccess} />}
       {page === 'dashboard' && (
         <Box sx={{ display: 'flex', height: '100vh' }}>
-          <Sidebar />
+          <Sidebar onSelect={setModule} />
           <Box sx={{ flexGrow: 1 }}>
             <Navbar />
-            <DashboardCards />
-            <DashboardChart />
-            <DashboardTable />
-            <UserManagement />
+            {module === 'Dashboard' && <><DashboardCards /><DashboardChart /><DashboardTable /><UserManagement /></>}
+            {module === 'Accounting' && <Accounting />}
+            {module === 'Inventory' && <Inventory />}
+            {module === 'Manufacturing' && <Manufacturing />}
+            {module === 'HR Management' && <HRManagement />}
+            {/* Add stubs for CRM, Sales, Purchasing, Analytics, Support as needed */}
+            {module === 'CRM' && <Box sx={{ p: 4 }}><h2>CRM</h2><p>Customer Relationship Management module placeholder.</p></Box>}
+            {module === 'Sales' && <Box sx={{ p: 4 }}><h2>Sales</h2><p>Sales module placeholder.</p></Box>}
+            {module === 'Purchasing' && <Box sx={{ p: 4 }}><h2>Purchasing</h2><p>Purchasing module placeholder.</p></Box>}
+            {module === 'Analytics' && <Box sx={{ p: 4 }}><h2>Analytics</h2><p>Analytics module placeholder.</p></Box>}
+            {module === 'Support' && <Box sx={{ p: 4 }}><h2>Support</h2><p>Support module placeholder.</p></Box>}
           </Box>
         </Box>
       )}

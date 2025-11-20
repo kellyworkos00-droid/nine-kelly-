@@ -15,17 +15,19 @@ const menuItems = [
   { text: 'Inventory', icon: <WorkIcon /> },
   { text: 'Manufacturing', icon: <SettingsIcon /> },
   { text: 'HR Management', icon: <PeopleIcon /> },
-  { text: 'Users', icon: <PeopleIcon /> },
-  { text: 'Reports', icon: <BarChartIcon /> },
-  { text: 'Settings', icon: <SettingsIcon /> },
+  { text: 'CRM', icon: <PeopleIcon /> },
+  { text: 'Sales', icon: <BarChartIcon /> },
+  { text: 'Purchasing', icon: <WorkIcon /> },
+  { text: 'Analytics', icon: <BarChartIcon /> },
+  { text: 'Support', icon: <SettingsIcon /> },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ onSelect }: { onSelect: (module: string) => void }) {
   return (
     <Drawer variant="permanent" anchor="left">
       <List>
         {menuItems.map((item, index) => (
-          <ListItem button key={item.text}>
+          <ListItem button key={item.text} onClick={() => onSelect(item.text)}>
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText primary={item.text} />
           </ListItem>
