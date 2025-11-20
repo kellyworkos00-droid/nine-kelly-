@@ -5,9 +5,11 @@ import Box from '@mui/material/Box';
 
 
 
+
 import DashboardCards from './components/DashboardCards';
 import DashboardChart from './components/DashboardChart';
 import DashboardTable from './components/DashboardTable';
+import UserManagement from './components/UserManagement';
 
 export default function App() {
   return (
@@ -18,6 +20,7 @@ export default function App() {
         <DashboardCards />
         <DashboardChart />
         <DashboardTable />
+        <UserManagement />
         {/* Main dashboard content will go here */}
       </Box>
     </Box>
